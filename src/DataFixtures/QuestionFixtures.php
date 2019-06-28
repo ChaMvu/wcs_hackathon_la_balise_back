@@ -19,9 +19,9 @@ class QuestionFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker  =  Faker\Factory::create('fr_FR');
-        $question = new Question();
-        $question->setContent($faker->sentence);
         for($i = 1; $i <=4; $i ++) {
+            $question = new Question();
+            $question->setContent($faker->sentence);
             $question->setPosition($i);
             $manager->persist($question);
         }
