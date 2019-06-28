@@ -15,7 +15,12 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            logout:
+                path:   app_logout
             anonymous: true
+            guard:
+                authenticators:
+                    - App\Security\UserFormAuthenticator
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
